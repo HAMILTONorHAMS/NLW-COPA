@@ -1,0 +1,111 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+ul{
+    list-style: none;
+}
+body{
+    background-image: url(./assents/fundo.svg);
+   /* background-position-y: center;
+    background-position-x: 55,6%;*/
+    background-size: 100%; /*Achei melhor assim*/
+    background-repeat: no-repeat;
+    background-color: #121214fa;
+}
+body *{
+    font-family: 'Roboto', sans-serif
+}
+#app {
+    width: fit-content;
+    margin: 52px auto;
+}
+header{
+    margin-bottom: 63px;
+    text-align: center;
+}
+#cards{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.card{
+    padding: 32px 23px;
+    text-align: center;
+    background: #202024;
+    border-bottom: 2px solid #338AF3;
+    border-radius: 6px;
+}
+.card h2 {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #338AF3;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 53px;
+    color: #F7DD43;
+}
+.card h2 span{
+    color: #E1E1E6;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.card ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card ul li + li {
+    padding-top: 24px;
+    border-top: 1px solid #323238;
+    
+}
+.card ul li strong{
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 125%;
+    text-align: center;    
+    color: #E1E1E6; 
+}
+.card h2:hover,
+.card ul li strong:hover,
+img:hover{
+    transform: scale(1.1);
+}
+.card h2,
+.card ul li strong,
+img {
+    transition: transform 0.3s;
+}
+.card {
+    opacity: 0;
+    animation: appear .2s forwards;
+}
+@keyframes appear {
+    0%{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@media (min-width: 700px){
+    #cards {
+        max-width: 670px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
